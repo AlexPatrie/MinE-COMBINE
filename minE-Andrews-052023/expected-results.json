@@ -1,6 +1,6 @@
 {
-  "name": "Lotka-Volterra model",
-  "filename": "Lotka-Volterra.omex",
+  "name": "E. coli Min System Simulation",
+  "filename": "MinSystem.omex",
   "taskRequirements": [{
     "modelFormat": "format_9001",
     "modelFormatFeatures": [],
@@ -9,22 +9,38 @@
   "skippedSimulators": [],
   "expectedReports": [{
     "id": "simulation.sedml/report",
-    "dataSets": [
+    "dataSets": [{
+      "id": "data_set_time",
+      "label": "Time"
+    },
       {
-        "id": "data_set_locations",
-        "label": "Locations"
+        "id": "data_set_MinD_ATP",
+        "label": "MinD_ATP"
+      },
+      {
+        "id": "data_set_MinD_ADP",
+        "label": "MinD_ADP"
+      },
+      {
+        "id": "data_set_MinE",
+        "label": "MinE"
+      },
+      {
+        "id": "data_set_MinDMinE",
+        "label": "MinDMinE"
       }
     ],
-    "points": [2001],
+    "points": [5000],
     "values": [{
       "id": "data_set_time",
       "label": "Time",
       "value": {
         "0": 0,
-        "1": 0.01,
-        "2": 0.02,
-        "999": 9.99,
-        "2000": 20
+        "1000": 2,
+        "2000": 4,
+        "3000": 6,
+        "4000": 8,
+        "5000": 10
       }
     }]
   }],
@@ -32,10 +48,10 @@
     "id": "simulation.sedml/Figure"
   }],
   "runtimeFailureAlertType": "exception",
-  "author": "Steven S. Andrews",
+  "author": "Steven Andrews",
   "identifiers": [{
     "namespace": "url",
-    "id": "http://www.smoldyn.org/archive/examples/S8_reactions/lotvolt/lotvolt.txt",
-    "url": "http://www.smoldyn.org/archive/examples/S8_reactions/lotvolt/lotvolt.txt"
+    "id": "https://github.com/ssandrews/Smoldyn/blob/master/examples/S15_python/Min1.txt",
+    "url": "https://github.com/ssandrews/Smoldyn/blob/master/examples/S15_python/Min1.txt"
   }]
 }
