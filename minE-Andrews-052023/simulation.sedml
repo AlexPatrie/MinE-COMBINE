@@ -11,4 +11,35 @@
   <listOfTasks>
     <task id="task" modelReference="model" simulationReference="simulation"/>
   </listOfTasks>
+  <listOfDataGenerators>
+    <dataGenerator id="data_generator_time" name="Time">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> var_time </ci>
+      </math>
+      <listOfVariables>
+        <variable id="var_time" name="Time" symbol="urn:sedml:symbol:time" taskReference="task"/>
+      </listOfVariables>
+    </dataGenerator>
+    <dataGenerator id="data_generator_molecules" name="Molecules">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> var_molecules </ci>
+      </math>
+      <listOfVariables>
+        <variable id="var_molecules" name="Molecules" target="listmols" taskReference="task"/>
+      </listOfVariables>
+    </dataGenerator>
+  </listOfDataGenerators>
+  <listOfOutputs>
+    <report id="report">
+      <listOfDataSets>
+        <dataSet id="data_set_time" label="Time" dataReference="data_generator_time"/>
+        <dataSet id="data_set_molecules" label="Molecules" dataReference="data_generator_molecules"/>
+      </listOfDataSets>
+    </report>
+    <plot2D id="Figure" name="Figure">
+      <listOfCurves>
+        <curve id="curve_molecules" name="Molecules" xDataReference="data_generator_time" yDataReference="data_generator_molecules"/>
+      </listOfCurves>
+    </plot2D>
+  </listOfOutputs>
 </sedML>
