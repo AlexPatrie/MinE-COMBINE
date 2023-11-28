@@ -8,4 +8,7 @@
       <algorithm kisaoID="KISAO:0000057"/>
     </uniformTimeCourse>
   </listOfSimulations>
+  <listOfTasks>
+    <task id="task" modelReference="model" simulationReference="simulation"/>
+  </listOfTasks>
 </sedML>

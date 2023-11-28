@@ -11,7 +11,7 @@
   "skippedSimulators": [],
   "expectedReports": [
     {
-      "id": "simulation.sedml/report",
+      "id": "modelout.txt",
       "dataSets": [
         {
           "id": "data_set_time",
@@ -39,11 +39,7 @@
       ]
     }
   ],
-  "expectedPlots": [
-    {
-      "id": "simulation.sedml/Figure"
-    }
-  ],
+  "expectedPlots": [],
   "runtimeFailureAlertType": "exception",
   "author": "Steven Andrews",
   "identifiers": [
