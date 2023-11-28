@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sedML xmlns="http://sed-ml.org/sed-ml/level1/version3" level="1" version="3">
+  <listOfModels>
+    <model id="model" language="urn:sedml:language:smoldyn" source="model.txt"/>
+  </listOfModels>
+  <listOfSimulations>
+    <uniformTimeCourse id="simulation" initialTime="0" outputStartTime="0" outputEndTime="10" numberOfPoints="5000">
+      <algorithm kisaoID="KISAO:0000057"/>
+    </uniformTimeCourse>
+  </listOfSimulations>
+  <listOfTasks>
+    <task id="task" modelReference="model" simulationReference="simulation"/>
+  </listOfTasks>
+  <listOfDataGenerators>
+    <dataGenerator id="data_generator_time" name="Time">
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <ci> variable_time </ci>
+      </math>
+      <listOfVariables>
+        <variable id="variable_time" target="executiontime" name="Time" symbol="urn:sedml:symbol:time" taskReference="task"/>
+      </listOfVariables>
+    </dataGenerator>
+    <dataGenerator id="data_generator_molecule_locations" name="MoleculeLocations">
+        <listOfVariables>
+            <variable id="variable_locations" target="listmols" taskReference="task"/>
+        </listOfVariables>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <ci> variable_locations </ci>
+        </math>
+        </dataGenerator>
+  </listOfDataGenerators>
+  <listOfOutputs>
+    <report id="report">
+      <listOfDataSets>
+        <dataSet id="time" name="Time" label="Time" dataReference="data_generator_time"/>
+        <dataSet id="count_species_MinD_ADP" name="Count of species &quot;MinD_ADP&quot;" label="Count of species &quot;MinD_ADP&quot;" dataReference="data_generator_count_species_MinD_ADP"/>
+        <dataSet id="count_species_MinD_ADP_compartment_cell" name="Count of species &quot;MinD_ADP&quot; in compartment &quot;cell&quot;" label="Count of species &quot;MinD_ADP&quot; in compartment &quot;cell&quot;" dataReference="data_generator_count_species_MinD_ADP_compartment_cell"/>
+        <dataSet id="count_species_MinD_ADP_surface_membrane" name="Count of species &quot;MinD_ADP&quot; in surface &quot;membrane&quot;" label="Count of species &quot;MinD_ADP&quot; in surface &quot;membrane&quot;" dataReference="data_generator_count_species_MinD_ADP_surface_membrane"/>
+        <dataSet id="count_species_MinD_ATP" name="Count of species &quot;MinD_ATP&quot;" label="Count of species &quot;MinD_ATP&quot;" dataReference="data_generator_count_species_MinD_ATP"/>
+        <dataSet id="count_species_MinD_ATP_compartment_cell" name="Count of species &quot;MinD_ATP&quot; in compartment &quot;cell&quot;" label="Count of species &quot;MinD_ATP&quot; in compartment &quot;cell&quot;" dataReference="data_generator_count_species_MinD_ATP_compartment_cell"/>
+        <dataSet id="count_species_MinD_ATP_surface_membrane" name="Count of species &quot;MinD_ATP&quot; in surface &quot;membrane&quot;" label="Count of species &quot;MinD_ATP&quot; in surface &quot;membrane&quot;" dataReference="data_generator_count_species_MinD_ATP_surface_membrane"/>
+        <dataSet id="count_species_MinDMinE" name="Count of species &quot;MinDMinE&quot;" label="Count of species &quot;MinDMinE&quot;" dataReference="data_generator_count_species_MinDMinE"/>
+        <dataSet id="count_species_MinDMinE_compartment_cell" name="Count of species &quot;MinDMinE&quot; in compartment &quot;cell&quot;" label="Count of species &quot;MinDMinE&quot; in compartment &quot;cell&quot;" dataReference="data_generator_count_species_MinDMinE_compartment_cell"/>
+        <dataSet id="count_species_MinDMinE_surface_membrane" name="Count of species &quot;MinDMinE&quot; in surface &quot;membrane&quot;" label="Count of species &quot;MinDMinE&quot; in surface &quot;membrane&quot;" dataReference="data_generator_count_species_MinDMinE_surface_membrane"/>
+        <dataSet id="count_species_MinE" name="Count of species &quot;MinE&quot;" label="Count of species &quot;MinE&quot;" dataReference="data_generator_count_species_MinE"/>
+        <dataSet id="count_species_MinE_compartment_cell" name="Count of species &quot;MinE&quot; in compartment &quot;cell&quot;" label="Count of species &quot;MinE&quot; in compartment &quot;cell&quot;" dataReference="data_generator_count_species_MinE_compartment_cell"/>
+        <dataSet id="count_species_MinE_surface_membrane" name="Count of species &quot;MinE&quot; in surface &quot;membrane&quot;" label="Count of species &quot;MinE&quot; in surface &quot;membrane&quot;" dataReference="data_generator_count_species_MinE_surface_membrane"/>
+      </listOfDataSets>
+    </report>
+  </listOfOutputs>
+</sedML>
