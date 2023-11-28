@@ -9,17 +9,10 @@
   "skippedSimulators": [],
   "expectedReports": [{
     "id": "simulation.sedml/report",
-    "dataSets": [{
-        "id": "data_set_time",
-        "label": "Time"
-      },
+    "dataSets": [
       {
-        "id": "data_set_rabbit",
-        "label": "Rabbit"
-      },
-      {
-        "id": "data_set_fox",
-        "label": "Fox"
+        "id": "data_set_locations",
+        "label": "Locations"
       }
     ],
     "points": [2001],
