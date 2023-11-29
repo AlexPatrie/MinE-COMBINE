@@ -25,7 +25,7 @@
         <ci> var_molecules </ci>
       </math>
       <listOfVariables>
-        <variable id="var_molecules" name="Molecules" target="listmols" taskReference="task"/>
+        <variable id="var_molecules" name="Molecules" target="molcount" taskReference="task"/>
       </listOfVariables>
     </dataGenerator>
   </listOfDataGenerators>
