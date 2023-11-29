@@ -20,12 +20,12 @@
         <variable id="var_time" name="Time" symbol="urn:sedml:symbol:time" taskReference="task"/>
       </listOfVariables>
     </dataGenerator>
-    <dataGenerator id="data_generator_molecules" name="Molecules">
+    <dataGenerator id="data_generator_MinE" name="Count_MinE">
       <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <ci> var_molecules </ci>
+        <ci> var_count_MinE </ci>
       </math>
       <listOfVariables>
-        <variable id="var_molecules" name="Molecules" target="molcount" taskReference="task"/>
+        <variable id="var_count_MinE" name="Count_MinE" target="molcount MinE" taskReference="task"/>
       </listOfVariables>
     </dataGenerator>
   </listOfDataGenerators>
@@ -33,12 +33,12 @@
     <report id="report">
       <listOfDataSets>
         <dataSet id="data_set_time" label="Time" dataReference="data_generator_time"/>
-        <dataSet id="data_set_molecules" label="Molecules" dataReference="data_generator_molecules"/>
+        <dataSet id="data_set_MinE" label="Molecules" dataReference="data_generator_MinE"/>
       </listOfDataSets>
     </report>
     <plot2D id="Figure" name="Figure">
       <listOfCurves>
-        <curve id="curve_molecules" name="Molecules" xDataReference="data_generator_time" yDataReference="data_generator_molecules"/>
+        <curve id="curve_molecules" name="Molecules" xDataReference="data_generator_time" yDataReference="data_generator_MinE"/>
       </listOfCurves>
     </plot2D>
   </listOfOutputs>
